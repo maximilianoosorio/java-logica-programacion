@@ -4,7 +4,7 @@ package com.example;
  * Clase Principal: Ejecuta y demuestra todas las funcionalidades 
  * implementadas en los diferentes módulos del proyecto.
  */
-public class App {
+public class Main {
 
     public static void main(String[] args) {
         
