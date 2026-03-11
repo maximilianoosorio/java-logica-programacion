@@ -45,12 +45,12 @@ public class Main {
 
 
         System.out.println("\n===== BUCLES =====");
-        EstructuraDeRepeticion.ejemploWhile();
-        EstructuraDeRepeticion.ejemploDoWhile();
-        EstructuraDeRepeticion.ejemploForClasico();
-        EstructuraDeRepeticion.ejemploForAnidado();
-        EstructuraDeRepeticion.ejemploBreakContinue();
-        EstructuraDeRepeticion.ejemploEtiquetas();
+        EstructurasDeRepeticion.ejemploWhile();
+        EstructurasDeRepeticion.ejemploDoWhile();
+        EstructurasDeRepeticion.ejemploForClasico();
+        EstructurasDeRepeticion.ejemploForAnidado();
+        EstructurasDeRepeticion.ejemploBreakContinue();
+        EstructurasDeRepeticion.ejemploEtiquetas();
 
 
 
