@@ -53,6 +53,7 @@ public class Main {
         EstructuraDeRepeticion.ejemploEtiquetas();
 
 
+
         System.out.println("\n===== MÉTODOS =====");
         MetodosEstaticosSimples.ejemploMetodoSinParametros();
         MetodosEstaticosSimples.ejemploMetodoConParametros("Michell", 20);

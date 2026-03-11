@@ -1,6 +1,6 @@
 package com.example;
 
-public class EstructuraDeRepeticion {
+public class EstructurasDeRepeticion {
     // Ejemplo de while
     public static void ejemploWhile() {
         int contador = 1;
