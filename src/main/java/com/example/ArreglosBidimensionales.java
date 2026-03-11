@@ -1,54 +1,77 @@
 package com.example;
 
 public class ArreglosBidimensionales {
-
-    /**
-     * Diferentes formas de declarar e inicializar matrices.
-     */
+    // Declarar y crear matrices
     public static void declararCrearMatrices() {
-        // Forma 1: Declarar y crear con tamaño fijo (3 filas, 4 columnas)
-        int[][] matriz1 = new int[3][4];
 
-        // Forma 2: Inicialización directa con valores (3x3)
-        int[][] matriz2 = {
-            {1, 2, 3},
-            {4, 5, 6},
-            {7, 8, 9}
+        // Declaración
+        int[][] matriz;
+
+        // Creación
+        matriz = new int[2][3];
+
+        // Inicialización
+        matriz[0][0] = 1;
+        matriz[0][1] = 2;
+        matriz[0][2] = 3;
+        matriz[1][0] = 4;
+        matriz[1][1] = 5;
+        matriz[1][2] = 6;
+
+        System.out.println("Matriz creada manualmente:");
+        for (int i = 0; i < matriz.length; i++) {
+            for (int j = 0; j < matriz[i].length; j++) {
+                System.out.print(matriz[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
+
+    // Recorrer una matriz con bucles anidados
+    public static void recorrerMatriz() {
+
+        int[][] matriz = {
+            {10, 20, 30},
+            {40, 50, 60},
+            {70, 80, 90}
         };
 
-        // Forma 3: Matriz irregular (Jagged Array)
-        // Las filas pueden tener diferentes tamaños
-        int[][] irregular = new int[2][];
-        irregular[0] = new int[3];
-        irregular[1] = new int[5];
-    }
+        System.out.println("\nRecorrido de la matriz:");
 
-    /**
-     * Recorrido estándar usando bucles for anidados.
-     */
-    public static void recorrerMatriz() {
-        int[][] matriz = { {1, 2}, {3, 4}, {5, 6} };
-
-        // matriz.length nos da el número de filas
         for (int i = 0; i < matriz.length; i++) {
-            // matriz[i].length nos da el número de columnas de esa fila
+
             for (int j = 0; j < matriz[i].length; j++) {
-                int valor = matriz[i][j];
-                // Lógica con el valor...
+
+                System.out.print(matriz[i][j] + " ");
             }
+
+            System.out.println();
         }
     }
 
-    /**
-     * Ejemplo práctico: Sumar todos los elementos de una tabla.
-     */
-    public static int sumarMatriz(int[][] tabla) {
-        int sumaTotal = 0;
-        for (int[] fila : tabla) {
-            for (int elemento : fila) {
-                sumaTotal += elemento;
+    // Ejemplo de uso de matrices (tabla simple)
+    public static void ejemploUsosTipos() {
+
+        int[][] tablaMultiplicar = new int[3][3];
+
+        for (int i = 0; i < tablaMultiplicar.length; i++) {
+
+            for (int j = 0; j < tablaMultiplicar[i].length; j++) {
+
+                tablaMultiplicar[i][j] = (i + 1) * (j + 1);
             }
         }
-        return sumaTotal;
+
+        System.out.println("\nTabla de multiplicar:");
+
+        for (int i = 0; i < tablaMultiplicar.length; i++) {
+
+            for (int j = 0; j < tablaMultiplicar[i].length; j++) {
+
+                System.out.print(tablaMultiplicar[i][j] + " ");
+            }
+
+            System.out.println();
+        }
     }
 }

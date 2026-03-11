@@ -1,65 +1,69 @@
 package com.example;
 
-import java.util.Scanner;
 import java.util.InputMismatchException;
+import java.util.Scanner;
 
 public class ManejoBasicoExcepciones {
-
-    /**
-     * Captura el error de dividir por cero.
-     */
-    public static int ejemploTryCatchDivision(int a, int b) {
+     // 1️⃣ Try-Catch división
+    public static void ejemploTryCatchDivision() {
         try {
-            return a / b;
+            int a = 10;
+            int b = 0;
+            int resultado = a / b;
+
+            System.out.println("Resultado: " + resultado);
         } catch (ArithmeticException e) {
-            // Se ejecuta si b es 0
-            return 0; 
+            System.out.println("Error: No se puede dividir entre cero.");
         }
     }
 
-    /**
-     * Maneja el error cuando el usuario ingresa texto en lugar de un número.
-     */
+    // 2️⃣ Try-Catch con Scanner
     public static void ejemploTryCatchInput() {
+        @SuppressWarnings("resource")
         Scanner sc = new Scanner(System.in);
+
         try {
+            System.out.print("Ingrese un número entero: ");
             int numero = sc.nextInt();
+            System.out.println("Número ingresado: " + numero);
         } catch (InputMismatchException e) {
-            // Se ejecuta si el usuario escribe "hola" en vez de un número
-            sc.nextLine(); // Limpiar el buffer
+            System.out.println("Error: Debe ingresar un número entero.");
         }
     }
 
-    /**
-     * El bloque finally siempre se ejecuta, ocurra o no el error.
-     */
+    // 3️⃣ Bloque finally
     public static void ejemploBloqueFinally() {
+        Scanner sc = new Scanner(System.in);
+
         try {
-            // Código que podría fallar
+            System.out.print("Ingrese un número: ");
+            int numero = sc.nextInt();
+            System.out.println("Número: " + numero);
         } catch (Exception e) {
-            // Manejo del error
+            System.out.println("Ocurrió un error.");
         } finally {
-            // Ideal para cerrar recursos como archivos o bases de datos
+            System.out.println("Este bloque siempre se ejecuta.");
+            sc.close();
         }
     }
 
-    /**
-     * Uso de un bucle para obligar al usuario a dar una entrada válida
-     * sin que el programa se cierre por un error.
-     */
-    public static int evitarCierrePrograma() {
+    // 4️⃣ Evitar que el programa se cierre
+    public static void evitarCierrePrograma() {
         Scanner sc = new Scanner(System.in);
-        int numero = 0;
-        boolean entradaValida = false;
+        boolean valido = false;
 
-        while (!entradaValida) {
+        while (!valido) {
             try {
-                numero = sc.nextInt();
-                entradaValida = true; // Si llega aquí, no hubo error
+                System.out.print("Ingrese un número entero: ");
+                int numero = sc.nextInt();
+                System.out.println("Número válido: " + numero);
+                valido = true;
             } catch (InputMismatchException e) {
-                sc.nextLine(); // Limpiar el error del buffer
+                System.out.println("Entrada inválida. Intente nuevamente.");
+                sc.nextLine(); // limpiar buffer
             }
         }
-        return numero;
+
+        sc.close();
     }
 }

@@ -1,109 +1,100 @@
 package com.example;
 
-/**
- * Clase Principal: Ejecuta y demuestra todas las funcionalidades 
- * implementadas en los diferentes módulos del proyecto.
- */
 public class Main {
-
     public static void main(String[] args) {
-        
-        System.out.println("==============================================");
-        System.out.println("   FUNDAMENTOS DE PROGRAMACIÓN EN JAVA       ");
-        System.out.println("==============================================\n");
-
-        // --- Tema: Variables y Constantes ---
-        System.out.println("--- Tema: Variables y Constantes ---");
+        System.out.println("===== VARIABLES Y CONSTANTES =====");
         VariablesYConstantes.demostrarDeclaracionAsignacion();
         VariablesYConstantes.demostrarConvencionesNombres();
         VariablesYConstantes.demostrarConstantes();
-        System.out.println();
 
-        // --- Tema: Tipos de Datos Primitivos ---
-        System.out.println("--- Tema: Tipos de Datos Primitivos ---");
+
+        System.out.println("\n===== TIPOS DE DATOS PRIMITIVOS =====");
         TiposDeDatosPrimitivos.demostrarEnteros();
         TiposDeDatosPrimitivos.demostrarFlotantes();
-        TiposDeDatosPrimitivos.demostrarCaracteres();
+        TiposDeDatosPrimitivos.demostrarCaracter();
         TiposDeDatosPrimitivos.demostrarBooleanos();
-        System.out.println();
+        TiposDeDatosPrimitivos.demostrarValoresPorDefecto();
 
-        // --- Tema: Conversión de Tipos (Casting) ---
-        System.out.println("--- Tema: Conversión de Tipos ---");
+
+        System.out.println("\n===== CONVERSIÓN DE TIPOS =====");
         ConversionDeTipos.demostrarCastingImplicito();
         ConversionDeTipos.demostrarCastingExplicito();
-        ConversionDeTipos.demostrarProblemasDePrecision();
-        System.out.println();
+        ConversionDeTipos.demostrarProblemaDePrecision();
 
-        // --- Tema: Operadores ---
-        System.out.println("--- Tema: Operadores ---");
+
+        System.out.println("\n===== OPERADORES =====");
         Operadores.demostrarAritmeticos();
-        Operadores.demostrarRelacionales();
-        Operadores.demostrarAsignacionCompuesta();
         Operadores.demostrarIncrementoDecremento();
+        Operadores.demostrarRelacionales();
         Operadores.demostrarLogicos();
+        Operadores.demostrarAsignacionCompuesta();
         Operadores.demostrarOperadorTernario();
-        System.out.println();
 
-        // --- Tema: Entrada de Datos ---
-        // Nota: Este se deja comentado o al final para no interrumpir el flujo automático
-        // System.out.println("--- Tema: Entrada de Datos ---");
-        // EntradaDeDatos.leerVariosTipos();
-        // System.out.println();
 
-        // --- Tema: Estructuras Condicionales ---
-        System.out.println("--- Tema: Estructuras Condicionales ---");
-        EstructurasCondicionales.ejemploIf(20);
-        EstructurasCondicionales.ejemploIfElse(8.5);
-        EstructurasCondicionales.ejemploIfElseIfElse(14);
-        EstructurasCondicionales.ejemploSwitch(2);
-        EstructurasCondicionales.ejemploSwitchExpression(5);
-        System.out.println();
+        System.out.println("\n===== ENTRADA DE DATOS =====");
+        EntradaDeDatos.leerVariosTipos();
+        EntradaDeDatos.manejarSaltoDeLineaPendiente();
 
-        // --- Tema: Estructuras de Repetición ---
-        System.out.println("--- Tema: Estructuras de Repetición ---");
-        EstructurasDeRepeticion.ejemploForClasico();
-        EstructurasDeRepeticion.ejemploWhile();
-        EstructurasDeRepeticion.ejemploDoWhile();
-        EstructurasDeRepeticion.ejemploForAnidado();
-        EstructurasDeRepeticion.ejemploBreakContinue();
-        EstructurasDeRepeticion.ejemploEtiquetas();
-        System.out.println();
 
-        // --- Tema: Arreglos Unidimensionales ---
-        System.out.println("--- Tema: Arreglos Unidimensionales ---");
-        ArreglosUnidimensionales.mostrarLongitud();
+        System.out.println("\n===== CONDICIONALES =====");
+        EstructurasCondicionales.ejemploIf();
+        EstructurasCondicionales.ejemploIfElse();
+        EstructurasCondicionales.ejemploIfElseIfElse();
+        EstructurasCondicionales.ejemploSwitch();
+        EstructurasCondicionales.ejemploSwitchExpression();
+
+
+        System.out.println("\n===== BUCLES =====");
+        EstructuraDeRepeticion.ejemploWhile();
+        EstructuraDeRepeticion.ejemploDoWhile();
+        EstructuraDeRepeticion.ejemploForClasico();
+        EstructuraDeRepeticion.ejemploForAnidado();
+        EstructuraDeRepeticion.ejemploBreakContinue();
+        EstructuraDeRepeticion.ejemploEtiquetas();
+
+
+        System.out.println("\n===== MÉTODOS =====");
+        MetodosEstaticosSimples.ejemploMetodoSinParametros();
+        MetodosEstaticosSimples.ejemploMetodoConParametros("Michell", 20);
+
+        int suma = MetodosEstaticosSimples.ejemploMetodoConRetorno(5, 7);
+        System.out.println("Resultado: " + suma);
+
+
+        System.out.println("\n===== ARREGLOS UNIDIMENSIONALES =====");
         ArreglosUnidimensionales.declararCrearInicializar();
+        ArreglosUnidimensionales.mostrarLongitud();
         ArreglosUnidimensionales.recorrerConForClasico();
         ArreglosUnidimensionales.recorrerConForEach();
-        ArreglosUnidimensionales.sumarElementos(new int[]{1, 2, 3, 4, 5});
-        ArreglosUnidimensionales.generarArrayPares(5);
-        System.out.println();
 
-        // --- Tema: Arreglos Bidimensionales ---
-        System.out.println("--- Tema: Arreglos Bidimensionales ---");
+        int[] datos = {2,4,6};
+        int[] resultado = ArreglosUnidimensionales.arrayComoParametroYRetorno(datos);
+
+        for(int n : resultado){
+            System.out.println(n);
+        }
+
+
+        System.out.println("\n===== ARREGLOS BIDIMENSIONALES =====");
         ArreglosBidimensionales.declararCrearMatrices();
         ArreglosBidimensionales.recorrerMatriz();
-        ArreglosBidimensionales.sumarMatriz(new int[][]{{1, 2}, {3, 4}});
-        System.out.println();
+        ArreglosBidimensionales.ejemploUsosTipos();
 
-        // --- Tema: Manipulación de Cadenas ---
-        System.out.println("--- Tema: Manipulación de Cadenas ---");
+
+        System.out.println("\n===== CADENAS =====");
         ManipulacionCadenas.demostrarConcatenacion();
         ManipulacionCadenas.demostrarMetodosUtiles();
-        ManipulacionCadenas.demostrarInmutabilidad();
+        ManipulacionCadenas.equalsIgnoreCase();
+        ManipulacionCadenas.demostrarMutabilidad();
         ManipulacionCadenas.usarStringBuilder();
-        System.out.println();
 
-        // --- Tema: Manejo de Excepciones ---
-        System.out.println("--- Tema: Manejo de Excepciones ---");
-        ManejoBasicoExcepciones.ejemploTryCatchDivision(10, 0);
+
+        System.out.println("\n===== EXCEPCIONES =====");
+        ManejoBasicoExcepciones.ejemploTryCatchDivision();
         ManejoBasicoExcepciones.ejemploTryCatchInput();
         ManejoBasicoExcepciones.ejemploBloqueFinally();
         ManejoBasicoExcepciones.evitarCierrePrograma();
-        System.out.println();
 
-        System.out.println("==============================================");
-        System.out.println("   EJECUCIÓN FINALIZADA CON ÉXITO            ");
-        System.out.println("==============================================");
+        System.out.println("\n===== FIN DEL PROGRAMA =====");
     }
 }

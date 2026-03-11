@@ -2,68 +2,78 @@ package com.example;
 
 public class ArreglosUnidimensionales {
 
-    /**
-     * Diferentes formas de preparar un array para su uso.
-     */
+    // Demuestra diferentes formas de declarar, crear e inicializar un array
     public static void declararCrearInicializar() {
-        // Forma 1: Declarar y luego crear con tamaño (valores por defecto: 0)
-        int[] miArray1;
-        miArray1 = new int[3];
-        miArray1[0] = 10;
 
-        // Forma 2: Declarar y crear en una sola línea
-        double[] miArray2 = new double[5];
+        // Declaración
+        int[] numeros;
 
-        // Forma 3: Inicialización directa (literal)
-        String[] nombres = {"Ana", "Juan", "Pedro"};
-    }
+        // Creación
+        numeros = new int[3];
 
-    /**
-     * El atributo .length devuelve la cantidad de elementos.
-     */
-    public static int mostrarLongitud() {
-        int[] datos = {1, 2, 3, 4, 5, 6, 7};
-        return datos.length; // Retorna 7
-    }
+        // Inicialización
+        numeros[0] = 10;
+        numeros[1] = 20;
+        numeros[2] = 30;
 
-    /**
-     * Uso del for con índice para tener control total de la posición.
-     */
-    public static void recorrerConForClasico() {
-        int[] numeros = {10, 20, 30, 40};
+        // Declarar y crear al mismo tiempo
+        int[] edades = new int[3];
+
+        // Declarar, crear e inicializar en una sola línea
+        String[] nombres = {"Ana", "Luis", "Carlos"};
+
+        System.out.println("Array numeros:");
         for (int i = 0; i < numeros.length; i++) {
-            // Se accede mediante el índice: numeros[i]
-            numeros[i] = numeros[i] + 1; 
+            System.out.println(numeros[i]);
+        }
+
+        System.out.println("\nArray nombres:");
+        for (String nombre : nombres) {
+            System.out.println(nombre);
         }
     }
 
-    /**
-     * Uso de for-each: más limpio, pero no permite modificar 
-     * los valores originales ni usar el índice.
-     */
-    public static  void recorrerConForEach() {
-        String[] frutas = {"Manzana", "Pera", "Uva"};
+    // Usa length para obtener el tamaño del array
+    public static void mostrarLongitud() {
+
+        int[] numeros = {5, 10, 15, 20};
+
+        System.out.println("La longitud del array es: " + numeros.length);
+    }
+
+    // Recorre un array usando un for clásico
+    public static void recorrerConForClasico() {
+
+        int[] numeros = {1, 2, 3, 4, 5};
+
+        System.out.println("Recorrido con for clásico:");
+
+        for (int i = 0; i < numeros.length; i++) {
+            System.out.println("Posición " + i + ": " + numeros[i]);
+        }
+    }
+
+    // Recorre un array usando for-each
+    public static void recorrerConForEach() {
+
+        String[] frutas = {"Manzana", "Banana", "Naranja"};
+
+        System.out.println("Recorrido con for-each:");
+
         for (String fruta : frutas) {
-            // "fruta" representa el elemento actual en cada vuelta
+            System.out.println(fruta);
         }
     }
 
-    /**
-     * Demuestra cómo pasar y devolver estructuras completas.
-     */
-    public static int sumarElementos(int[] arrayEntrada) {
-        int suma = 0;
-        for (int num : arrayEntrada) {
-            suma += num;
-        }
-        return suma;
-    }
+    // Método que acepta un array como parámetro y retorna un array
+    public static int[] arrayComoParametroYRetorno(int[] numeros) {
 
-    public static int[] generarArrayPares(int cantidad) {
-        int[] resultado = new int[cantidad];
-        for (int i = 0; i < cantidad; i++) {
-            resultado[i] = i * 2;
+        int[] resultado = new int[numeros.length];
+
+        for (int i = 0; i < numeros.length; i++) {
+            resultado[i] = numeros[i] * 2;
         }
+
         return resultado;
     }
 }

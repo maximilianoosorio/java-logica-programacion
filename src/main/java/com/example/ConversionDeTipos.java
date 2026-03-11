@@ -1,34 +1,28 @@
 package com.example;
 
 public class ConversionDeTipos {
-
     public static void demostrarCastingImplicito(){
-    /**
-     * Ejemplo de Widening Conversion (automática).
-     * El compilador pasa de un tipo menor a uno mayor sin riesgo.
-     */
-        int miEntero = 100;
-        double miDouble = miEntero; // Casting automático
-        
-    }
+        int numeroInt = 100;
+        double numDouble = numeroInt;
 
-    /**
-     * Ejemplo de Narrowing Conversion (manual).
-     * Se requiere el operador (tipo) porque puede haber pérdida de información.
-     */
-    public static void demostrarCastingExplicito() {
-        double miDouble = 9.99d;
-        int miEntero = (int) miDouble; // Casting manual: el resultado será 9
+        System.out.println("int: " + numeroInt);
+        System.out.println("double: " + numDouble);
     }
+    public static void demostrarCastingExplicito(){
+        double numeDouble = 9.99;
+        int numInt = (int) numeDouble;
 
-    /**
-     * Muestra pérdida de precisión al convertir tipos con rangos distintos.
-     */
-    public static void demostrarProblemasDePrecision() {
-        // El rango de un byte es de -128 a 127.
-        // Al intentar meter 130, ocurrirá un desbordamiento (overflow).
-        int numeroGrande = 130;
-        byte resultado = (byte) numeroGrande; 
-        System.out.println(resultado); // Retornará -126 debido al desbordamiento circular
+        System.out.println("double:" + numeDouble);
+        System.out.println("int convertido " + numInt);
+
+    }
+    public static void demostrarProblemaDePrecision(){
+        double valorDouble = 7.89;
+        int valorInt = (int) valorDouble;
+
+        System.out.println("Valor original (double): " + valorDouble);
+        System.out.println("Valor convertido (int): " + valorInt);
+        System.out.println("Se pierden los decimales al convertir ");
+
     }
 }

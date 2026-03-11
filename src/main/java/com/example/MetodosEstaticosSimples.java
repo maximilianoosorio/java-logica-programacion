@@ -2,56 +2,29 @@ package com.example;
 
 public class MetodosEstaticosSimples {
 
-    /**
-     * Un método estático simple sin parámetros ni retorno.
-     */
-    public static void saludarEstatico() {
-        // Al ser void y sin parámetros, solo ejecuta una acción interna.
-        // Se llamaría como: MetodosEstaticosSimples.saludarEstatico();
+    // Método sin parámetros y sin retorno
+    public static void ejemploMetodoSinParametros() {
+        System.out.println("Este es un método sin parámetros y sin retorno.");
     }
 
-    public void ejemploDeclaracionLlamada() {
-        // Llamada interna (dentro de la misma clase)
-        saludarEstatico(); 
+    // Método que recibe parámetros
+    public static void ejemploMetodoConParametros(String nombre, int edad) {
+        System.out.println("Nombre: " + nombre);
+        System.out.println("Edad: " + edad);
     }
 
-    /**
-     * Un método estático que acepta parámetros.
-     */
-    public static void imprimirSuma(int a, int b) {
-        int resultado = a + b;
-        // Procesa la información recibida
+    // Método con retorno
+    public static int ejemploMetodoConRetorno(int a, int b) {
+        int suma = a + b;
+        return suma;
     }
 
-    public void ejemploPasoParametros() {
-        imprimirSuma(5, 10);
+    // Método sobrecargado (mismo nombre, diferentes parámetros)
+    public static int ejemploSobrecargaMetodo(int a, int b) {
+        return a + b;
     }
 
-    /**
-     * Un método estático que retorna un valor.
-     */
-    public static int calcularCuadrado(int numero) {
-        return numero * numero;
-    }
-
-    public void ejemploRetornoValores() {
-        int resultado = calcularCuadrado(4); // resultado valdrá 16
-    }
-
-    /**
-     * Sobrecarga (Overloading): Métodos con el mismo nombre pero 
-     * diferente lista de parámetros (en tipo o cantidad).
-     */
-    public static double area(double radio) {
-        return Math.PI * (radio * radio);
-    }
-
-    public static double area(double base, double altura) {
-        return (base * altura) / 2;
-    }
-
-    public void ejemploSobrecarga() {
-        double circulo = area(5.0);        // Llama al primer método
-        double triangulo = area(10.0, 5.0); // Llama al segundo método
+    public static double ejemploSobrecargaMetodo(double a, double b) {
+        return a + b;
     }
 }
